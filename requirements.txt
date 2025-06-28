@@ -1,6 +1,7 @@
 # Core Web Framework
 fastapi
 uvicorn[standard]
+pyttsx3
 
 # Template Rendering
 jinja2
