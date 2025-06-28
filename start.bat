@@ -1,3 +1,3 @@
 @echo off
 call env\Scripts\activate
-uvicorn app.web.interface:app --reload
+uvicorn app.web.interface:app --reload --reload-dir app
