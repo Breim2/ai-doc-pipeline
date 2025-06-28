@@ -23,6 +23,8 @@ OUTPUT_DIR = "outputs"
 # Create necessary directories
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(LOG_FOLDER, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 
 # Mount static and media folders
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
