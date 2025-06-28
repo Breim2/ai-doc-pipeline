@@ -71,7 +71,7 @@ cd ai-doc-pipeline
 2. **Set up the environment**
 ```bash
 python -m venv env
-env\Scripts\activate
+source env/Scripts/activate
 pip install -r requirements.txt
 ```
 
