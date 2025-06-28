@@ -1,0 +1,31 @@
+# Core Web Framework
+fastapi
+uvicorn[standard]
+
+# Template Rendering
+jinja2
+
+# Static Files & File Handling
+python-multipart
+
+# OCR
+pytesseract
+Pillow
+opencv-python
+
+# Summarization (Hugging Face Transformers)
+transformers
+torch 
+
+# Text-to-Speech
+gTTS
+
+# Logging & Utilities
+loguru
+
+# Testing
+pytest
+pytest-asyncio
+
+# Optional: for working with environment files
+python-dotenv

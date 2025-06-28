@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Document Pipeline</title>
+  <link rel="stylesheet" href="/static/main.css" />
+  <link rel="icon" href="/static/favicon.ico" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI Document Pipeline</h1>
+    <p class="subtitle">Extract. Summarize. Speak.</p>
+
+    <form action="/process/" method="post" enctype="multipart/form-data">
+      <label for="file">Upload an image:</label>
+      <input type="file" id="file" name="file" accept="image/*" required />
+      <button type="submit">Process 📤</button>
+    </form>
+
+    <!-- Spinner: hidden by default -->
+    <div id="loading" style="display: none; margin-top: 1rem;">
+      <div class="spinner"></div>
+    </div>
+
+    {% if summary %}
+      <section class="results">
+        <h2>Summary</h2>
+        <p>{{ summary }}</p>
+      </section>
+    {% endif %}
+
+    {% if audio_file %}
+      <section class="audio">
+        <h2>Listen</h2>
+        <audio controls>
+          <source src="/{{ audio_file }}" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+    {% endif %}
+
+    <!-- Link to view logs -->
+    <p style="margin-top: 2rem;">
+      <a href="/logs">🔍 View Logs</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+    const loading = document.getElementById('loading');
+    form.addEventListener('submit', () => {
+      loading.style.display = 'block';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Log Files</title>
+  <link rel="stylesheet" href="/static/main.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📜 Log Files</h1>
+
+    {% if log_files %}
+      <ul>
+        {% for log in log_files %}
+          <li>
+            <a href="/logs/{{ log }}">{{ log }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p><em>No log files found yet. Once you upload a file and the pipeline runs, logs will appear here.</em></p>
+    {% endif %}
+
+    <a href="/" style="display:block;margin-top:1rem;">← Back to Home</a>
+  </div>
+</body>
+</html>
